@@ -9,7 +9,7 @@
 </head>
 
 <body>
-<img src="abacate.pgn" width="100" height="100" class="d-inline-block align-top" alt="">
+<img src="abacate.png" width="100" height="100" class="d-inline-block align-top" alt="">
 <p>Abacate KG</p>
 <p>R$ 8,00</p>
 

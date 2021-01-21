@@ -22,7 +22,7 @@
 <p>Inhame KG</p>
 <p>R$ 4,00</p>
 
-<img src="macexeira.jpg" width="100" height="100" class="d-inline-block align-top" alt="">
+<img src="macaxeira.jpg" width="100" height="100" class="d-inline-block align-top" alt="">
 <p>Macaxeira KG</p>
 <p>R$ 5,00</p>
 

@@ -9,7 +9,7 @@
 </head>
 
 <body>
-<img src="batata.pgn" width="100" height="100" class="d-inline-block align-top" alt="">
+<img src="batata.png" width="100" height="100" class="d-inline-block align-top" alt="">
 <p>Batata KG</p>
 <p>R$ 4,00</p>
 

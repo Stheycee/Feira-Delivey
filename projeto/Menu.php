@@ -15,10 +15,10 @@
     <nav>
     <div class="nav-wrapper">
       <a href="#" class="brand-logo">
-      <img src="https://www.google.com.br/url?sa=i&url=https%3A%2F%2Freceitasda.erikadecastropereira.com.br%2Fproduct_info.php%3Fproducts_id%3D418&psig=AOvVaw1VmCd9MViTjNJ1BrD3iDpE&ust=1610834290425000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCJiY4Ij4nu4CFQAAAAAdAAAAABAg" width="40" height="40" class="d-inline-block align-top" alt="">
+      <img src="feira.jpg" width="150" height="65" class="d-inline-block align-top" alt="">
         Feira Delivery</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="verduras.php">verduras</a></li>
+        <li><a href="verdura.php">verduras</a></li>
         <li><a href="Frutas.php">Frutas</a></li>
         <li><a href="Raizes.php">Raizes</a></li>
         <li><a href="Folhagens.php">folhagens</a></li>
