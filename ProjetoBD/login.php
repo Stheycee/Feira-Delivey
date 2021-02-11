@@ -5,7 +5,7 @@ header('Access-Control-Allow-Origin: *');
 require("conexao.php");
 $email = $_POST['email'];
 $senha = $_POST['senha'];
-$query_ = "SELECT * FROM usuario WHERE email ='$email' AND senha = '$senha'";
+$query_ = "SELECT * FROM usuario WHERE email_usuario ='$email' AND senha = '$senha'";
 $result = $conn->query($query_);
 
 

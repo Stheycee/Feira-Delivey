@@ -1,2 +1,4 @@
 acelga#2#8
 batata#6#24
+acelga#3#12
+coentro#2#8

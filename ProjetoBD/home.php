@@ -46,6 +46,11 @@ require "menu.php";
             Carrinho
           </a>
         </div>
+        <div class="card-action">
+          <a href="dados.php">
+            Endereço
+          </a>
+        </div>
       </div>
 
 

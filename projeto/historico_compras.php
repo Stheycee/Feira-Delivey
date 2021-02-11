@@ -26,7 +26,7 @@ fclose($arquivo);
   <style>
     .container {
       width: 100vw;
-      height: 60vh;
+      height: 80vh;
       display: flex;
       flex-direction: row;
       justify-content: center;
@@ -60,7 +60,7 @@ fclose($arquivo);
           </tr>
           <?php foreach ($compras as $compra) {
             $dados_compras = explode('#', $compra);
-            if (count($dados_compras) < 4) {
+            if (count($dados_compras) < 3) {
               continue;
             }  ?>
 
@@ -71,14 +71,12 @@ fclose($arquivo);
                 echo $dados_compras[0];
                 echo "</td>";
                 echo "<td class='table-danger'>";
-                echo $dados_comprass[1];
+                echo $dados_compras[1];
                 echo "</td>";
                 echo "<td class='table-danger'>";
                 echo $dados_compras[2];
                 echo "</td>";
-                echo "<td class='table-danger'>";
-                echo $dados_compras[3];
-                echo "</td>";
+
             
                 
               ?>
@@ -88,4 +86,5 @@ fclose($arquivo);
     </table>
     </div>
     <a type="button" class="btn btn-primary" href="home.php">Voltar</a>
+    <a type="button" class="btn btn-primary" href="finalizar.php">Finalizar</a>
   </div>

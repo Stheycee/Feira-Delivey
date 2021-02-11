@@ -1,3 +1,6 @@
+<?php
+require "validar_acesso.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
