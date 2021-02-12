@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 04/02/2021 às 19:58
+-- Tempo de geração: 13/02/2021 às 00:33
 -- Versão do servidor: 10.4.17-MariaDB
 -- Versão do PHP: 8.0.0
 
@@ -41,7 +41,31 @@ CREATE TABLE `carrinho` (
 INSERT INTO `carrinho` (`ce_id_compras`, `Produto`, `Quantidade`, `Total`) VALUES
 (1, 'acelga', 2, 8),
 (2, 'acelga', 3, 12),
-(3, 'acelga', 4, 16);
+(3, 'acelga', 4, 16),
+(3, 'coentro', 4, 16),
+(3, 'coentro', 4, 16),
+(3, 'batata', 1, 4);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `dados`
+--
+
+CREATE TABLE `dados` (
+  `ce_id_dados` int(100) NOT NULL,
+  `nome_rua` varchar(500) NOT NULL,
+  `numero` int(20) NOT NULL,
+  `referencia` varchar(500) NOT NULL,
+  `pagamento` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Despejando dados para a tabela `dados`
+--
+
+INSERT INTO `dados` (`ce_id_dados`, `nome_rua`, `numero`, `referencia`, `pagamento`) VALUES
+(3, 'Rua Loanda', 74, 'Perto do SESI', 'Cartão');
 
 -- --------------------------------------------------------
 
@@ -63,7 +87,11 @@ CREATE TABLE `usuario` (
 INSERT INTO `usuario` (`id_usuario`, `nome_usuario`, `email_usuario`, `senha`) VALUES
 (1, 'carla', 'carla@gmail.com', '123456'),
 (2, 'pedro', 'pedro@gmail.com', '654321'),
-(3, 'anna', 'anna@gmail.com', '111222');
+(3, 'anna', 'anna@gmail.com', '111222'),
+(4, 'stella', 'biscoito@teste.com', '123456'),
+(7, 'theyce', 'theyce@gmail.com', '123456'),
+(8, 'Maria', 'Maria@braga.com', '654321'),
+(9, 'Tio Bob', 'exterminador@futuro.com', '000000');
 
 --
 -- Índices para tabelas despejadas
@@ -74,6 +102,12 @@ INSERT INTO `usuario` (`id_usuario`, `nome_usuario`, `email_usuario`, `senha`) V
 --
 ALTER TABLE `carrinho`
   ADD KEY `ce_id_compras` (`ce_id_compras`);
+
+--
+-- Índices de tabela `dados`
+--
+ALTER TABLE `dados`
+  ADD KEY `ce_id_dados` (`ce_id_dados`);
 
 --
 -- Índices de tabela `usuario`
@@ -89,7 +123,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_usuario` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_usuario` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Restrições para tabelas despejadas
@@ -100,6 +134,12 @@ ALTER TABLE `usuario`
 --
 ALTER TABLE `carrinho`
   ADD CONSTRAINT `ce_id_compras` FOREIGN KEY (`ce_id_compras`) REFERENCES `usuario` (`id_usuario`);
+
+--
+-- Restrições para tabelas `dados`
+--
+ALTER TABLE `dados`
+  ADD CONSTRAINT `ce_id_dados` FOREIGN KEY (`ce_id_dados`) REFERENCES `usuario` (`id_usuario`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
