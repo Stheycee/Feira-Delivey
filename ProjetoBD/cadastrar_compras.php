@@ -1,15 +1,17 @@
 <?php
-echo "<pre>";
-print_r($_POST);
-echo "</pre>";
 
+session_start();
+header('Access-Control-Allow-Origin: *');
+
+
+require("conexao.php");
+$nome = $_POST['nome'];
 $quant = $_POST['Quantidade'];
-
 $total = $quant * 4;
-$total = round($total, 2); 
-$texto = $_POST['nome'] . '#' . $_POST['Quantidade'] .  '#' . $total . PHP_EOL;
+$id_usuario = $_SESSION['idusuario'];
+$stmt = $conn->prepare("INSERT INTO carrinho (ce_id_compras,Produto,Quantidade,Total) VALUES (?,?,?,?)");
+$stmt->bind_param("isss", $id_usuario, $nome, $quant, $total);
+$stmt->execute();
+$conn->close();
+header('Location:home.php'); 
 
-$arquivo = fopen('arquivo_cadastro_compras.txt', 'a');
-fwrite($arquivo, $texto);
-fclose($arquivo);
-header('Location:home.php');

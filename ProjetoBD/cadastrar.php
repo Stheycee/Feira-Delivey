@@ -24,40 +24,64 @@
                 <div class="card-login">
                     <div class="card">
                         <div class="card-header">
-                        Cadastro
-					<div class="wrap-input100 validate-input m-b-16">
-						<input class="input100" type="text" name="nome" placeholder="Nome">
-						<span class="focus-input100"></span>
-						<span class="symbol-input100">
-							<span class="lnr lnr-user"></span>
-						</span>
-					</div>
-					<div class="wrap-input100 validate-input m-b-16" data-validate="Valid email is required: ex@abc.xyz">
-						<input class="input100" type="text" name="email" placeholder="Email">
-						<span class="focus-input100"></span>
-						<span class="symbol-input100">
-							<span class="lnr lnr-envelope"></span>
-						</span>
-					</div>
-					<div class="wrap-input100 validate-input m-b-16" data-validate="Password is required">
-						<input class="input100" type="password" name="pass" placeholder="Senha">
-						<span class="focus-input100"></span>
-						<span class="symbol-input100">
-							<span class="lnr lnr-lock"></span>
-						</span>
-					</div>
-					<<div class="text-center w-full p-t-115">
-						<a class="txt1 bo1 hov1" href="home.php">
-							Entrar
-						</a>
-					</div>
-					<div class="text-center w-full p-t-115">
-						<span class="txt1">
-							Ja é cadastrado(a)?
-						</span>
-						<a class="txt1 bo1 hov1" href="index.php">
-							Login
-						</a>
+
+						<div class="limiter">
+							<div class="container-login100">
+								<div class="wrap-login100 p-l-50 p-r-50 p-t-77 p-b-30">
+									<form action="cadastrar_usuario.php" method="POST" class="login100-form validate-form">
+										<span class="login100-form-title p-b-55">
+											Cadastro
+										</span>
+										<div class="wrap-input100 validate-input m-b-16">
+											<input class="input100" type="text" name="nome" placeholder="Nome">
+											<span class="focus-input100"></span>
+											<span class="symbol-input100">
+												<span class="lnr lnr-user"></span>
+											</span>
+										</div>
+										<div class="wrap-input100 validate-input m-b-16" data-validate="Valid email is required: ex@abc.xyz">
+											<input class="input100" type="text" name="email" placeholder="Email">
+											<span class="focus-input100"></span>
+											<span class="symbol-input100">
+												<span class="lnr lnr-envelope"></span>
+											</span>
+										</div>
+
+										<div class="wrap-input100 validate-input m-b-16" data-validate="Password is required">
+											<input class="input100" type="password" name="senha" placeholder="Senha">
+											<span class="focus-input100"></span>
+											<span class="symbol-input100">
+												<span class="lnr lnr-lock"></span>
+											</span>
+										</div>
+
+										<?php if (isset($_GET['login']) && $_GET['login'] == 'igual') { ?>
+											<div class="alert alert-warning" role="alert">
+												Email já cadastrado!
+											</div>
+
+										<?php } ?>
+
+										<div class="container-login100-form-btn p-t-25">
+											<button class="login100-form-btn">
+												Cadastrar
+											</button>
+										</div>
+
+
+										<div class="text-center w-full p-t-115">
+											<span class="txt1">
+												Ja é cadastrado(a)?
+											</span>
+
+											<a class="txt1 bo1 hov1" href="index.php">
+												Faça o Login
+											</a>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
 					</div>
 				</form>
 			</div>

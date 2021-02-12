@@ -1,5 +1,6 @@
 <?php
 require "menu.php";
+//require "finalizar_compras.php";
 ?>
 <?php
 

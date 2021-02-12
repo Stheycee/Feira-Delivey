@@ -1,14 +1,4 @@
 <?php
-
-$texto = $_POST['endereço'] . '#' . $_POST['numero'] .  '#' . $_POST['referencia'] .  '#' . $_POST['pagamento']  . PHP_EOL;
-
-$arquivo = fopen('arquivo_pedido.txt', 'a');
-fwrite($arquivo, $texto);
-fclose($arquivo);
-
-
-header('Location:home.php');
-/*
 header('Access-Control-Allow-Origin: *');
 require("conexao.php");
 $id_usuario = $_SESSION['idusuario'];
@@ -20,9 +10,11 @@ if ($result->num_rows > 0) {
 
     $dados_compras[] = $row['Produto'] . '#' . $row['Quantidade'] . "#" . $row['Total'] ;
   }
+} else {
 
+  echo ("<script>
+        window.alert('Você não possui compras cadastradas.')
+        window.location.href='../Login/home.php';
+    </script>");
 }
 $conn->close();
-
-
-  header('Location:index.php'); */ 

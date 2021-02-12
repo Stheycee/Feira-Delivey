@@ -1,17 +1,11 @@
 <?php
 require "menu.php";
+require "compras_cliente.php";
+
 ?>
 <?php
 
 $compras = array();
-
-$arquivo = fopen('arquivo_cadastro_compras.txt', 'r');
-
-while (!feof($arquivo)) {
-  $registro = fgets($arquivo);
-  $compras[] = $registro;
-}
-fclose($arquivo);
 
 ?>
 <!DOCTYPE html>
@@ -51,17 +45,20 @@ fclose($arquivo);
             <th>Nome do Produto</th>
             <th>Quantidade</th>
             <th>Total da compra</th>
+         
             
 
           </tr>
-          <?php foreach ($compras as $compra) {
-            $dados_compras = explode('#', $compra);
-            if (count($dados_compras) < 3) {
-              continue;
-            }  ?>
+          <?php foreach ($dados_compras as $compra) {
+              $dados_compras = explode('#', $compra);
 
-            <tr>
-              <?php 
+            ?>
+
+
+          <tr>
+
+            <?php
+
 
                 echo "<td class='table-danger'>";
                 echo $dados_compras[0];
@@ -72,8 +69,6 @@ fclose($arquivo);
                 echo "<td class='table-danger'>";
                 echo $dados_compras[2];
                 echo "</td>";
-
-            
                 
               ?>
             </tr>
