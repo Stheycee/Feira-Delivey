@@ -51,6 +51,7 @@ $compras = array();
           </tr>
           <?php foreach ($dados_compras as $compra) {
               $dados_compras = explode('#', $compra);
+              
 
             ?>
 
@@ -58,8 +59,8 @@ $compras = array();
           <tr>
 
             <?php
-
-
+              
+                
                 echo "<td class='table-danger'>";
                 echo $dados_compras[0];
                 echo "</td>";
@@ -69,6 +70,7 @@ $compras = array();
                 echo "<td class='table-danger'>";
                 echo $dados_compras[2];
                 echo "</td>";
+                
                 
               ?>
             </tr>

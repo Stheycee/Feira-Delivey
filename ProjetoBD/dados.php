@@ -1,18 +1,10 @@
 <?php
 require "menu.php";
-//require "finalizar_compras.php";
+require "final.php";
 ?>
 <?php
 
 $compras = array();
-
-$arquivo = fopen('arquivo_pedido.txt', 'r');
-
-while (!feof($arquivo)) {
-  $registro = fgets($arquivo);
-  $compras[] = $registro;
-}
-fclose($arquivo);
 
 ?>
 <!DOCTYPE html>
@@ -56,14 +48,19 @@ fclose($arquivo);
             
 
           </tr>
-          <?php foreach ($compras as $compra) {
-            $dados_compras = explode('#', $compra);
-            if (count($dados_compras) < 4) {
-              continue;
-            }  ?>
+          
 
             <tr>
-              <?php 
+            <?php foreach ($dados_compras as $compra) {
+              $dados_compras = explode('#', $compra);
+
+            ?>
+
+
+          <tr>
+
+            <?php
+
 
                 echo "<td class='table-danger'>";
                 echo $dados_compras[0];
@@ -77,8 +74,6 @@ fclose($arquivo);
                 echo "<td class='table-danger'>";
                 echo $dados_compras[3];
                 echo "</td>";
-
-            
                 
               ?>
             </tr>

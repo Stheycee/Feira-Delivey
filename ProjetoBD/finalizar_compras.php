@@ -1,5 +1,5 @@
 <?php
-
+/*
 $texto = $_POST['endereço'] . '#' . $_POST['numero'] .  '#' . $_POST['referencia'] .  '#' . $_POST['pagamento']  . PHP_EOL;
 
 $arquivo = fopen('arquivo_pedido.txt', 'a');
@@ -8,21 +8,22 @@ fclose($arquivo);
 
 
 header('Location:home.php');
-/*
+*/
+
+session_start();
 header('Access-Control-Allow-Origin: *');
+  
 require("conexao.php");
+$endereço = $_POST['endereço'];
+$numero = $_POST['numero'];
+$referencia = $_POST['referencia'];
+$pagamento = $_POST['pagamento'];
 $id_usuario = $_SESSION['idusuario'];
-$query_ = "SELECT * FROM carrinho WHERE ce_id_compras = '$id_usuario'ORDER BY Produto ASC";
-$result = $conn->query($query_);
-$dados_compras = array();
-if ($result->num_rows > 0) {
-  while ($row = $result->fetch_assoc()) {
-
-    $dados_compras[] = $row['Produto'] . '#' . $row['Quantidade'] . "#" . $row['Total'] ;
-  }
-
-}
+  
+  
+$stmt = $conn->prepare("INSERT INTO dados (ce_id_dados,nome_rua,numero,referencia,pagamento) VALUES (?,?,?,?,?)");
+$stmt->bind_param("isiss", $id_usuario, $endereço, $numero, $referencia,$pagamento);
+$stmt->execute();
 $conn->close();
-
-
-  header('Location:index.php'); */ 
+header('Location:home.php'); 
+    
